@@ -17,6 +17,14 @@
         end
         
         function callback_addRecord(obj,src,event)
+            
+            obj.ModelObj.addRecord(obj.ViewObj.DatePicker.Value,...
+                                   obj.ViewObj.EditFieldValue.Value,...
+                                   obj.ViewObj.DropDownClass.Value,...
+                                   obj.ViewObj.EditFieldRemarks.Value);
+            
+        end
+        function callback_updateRecord(obj,src,event)
             obj.ModelObj.updateRecord;
         end
     end

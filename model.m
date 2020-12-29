@@ -10,10 +10,10 @@ classdef model < handle
         initialDataTableFile = 'finacialData.scv' % 初始数据表文件
         newDataTable % 新数据表 csv 格式
         outDataTable % 输出数据表 csv 格式
-        tableVariableNames = {'Data','Value','Class','Remarks'};
+        tableVariableNames = {'Data','Value','Type','Remarks'};
         Date     % 时间
         Value    % 值，数额
-        Class    % 类型
+        Type    % 类型
         Remarks  % 备注     
     end
     events
@@ -38,16 +38,16 @@ classdef model < handle
             obj.newDataTable = table;
             obj.outDataTable = table;
         end
-        function addRecord(obj,record)
+        function addRecord(obj,Date,Value,Type,Remarks)
             % 增加记录
-            obj.newDataTable.Date = record.Date;
-            obj.newDataTable.Value = record.Value;
-            obj.newDataTable.Class = record.Class;
-            obj.newDataTable.Remarks = record.Remarks;
+            obj.newDataTable.Date = Date;
+            obj.newDataTable.Value = Value;
+            obj.newDataTable.Type = Type;
+            obj.newDataTable.Remarks = Remarks;
         end
         function updateRecord(obj)
             obj.outDataTable = [obj.initialDataTable;obj.newDataTable];
-            obj.notify('updateData');
+            notify(obj,'updateData');
         end
 %         function delete(obj)
 %            % 删除对象 

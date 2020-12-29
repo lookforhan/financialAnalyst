@@ -15,3 +15,15 @@ a.EditFieldValue.Value
 
 % 测试EditFieldRemarks
 a.EditFieldRemarks.Value
+
+% 测试Model
+disp('Model:')
+a.ModelObj
+disp('initialDataTable:')
+a.ModelObj.initialDataTable
+disp('initialDataTableFile:')
+a.ModelObj.initialDataTableFile
+disp('outDataTable:')
+a.ModelObj.outDataTable
+% 测试ControlerObj
+a.ControllerObj

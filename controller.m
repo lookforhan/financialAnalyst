@@ -1,4 +1,4 @@
-classdef controller < handle
+ classdef controller < handle
     %controller 控制器，MVC中的C
     %   连接model和（finanicial）view
     % 2012-12-3 第一版
@@ -9,11 +9,11 @@ classdef controller < handle
     end
     
     methods
-        function obj = controller(inputArg1,inputArg2)
+        function obj = controller(inputArg1_view,inputArg2_model)
             %UNTITLED4 构造此类的实例
             %   此处显示详细说明
-            obj.ModelObj = inputArg1;
-            obj.ViewObj = inputArg2;
+            obj.ModelObj = inputArg2_model;
+            obj.ViewObj = inputArg1_view;
         end
         
         function callback_addRecord(obj,src,event)

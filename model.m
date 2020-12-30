@@ -44,6 +44,7 @@ classdef model < handle
             obj.newDataTable.Value = Value;
             obj.newDataTable.Type = Type;
             obj.newDataTable.Remarks = Remarks;
+%             obj.newDataTable = table([{Date};{Value};{Type};{Remarks}],'VariableNames',{'Date';'Value';'Type';'Remarks'});
         end
         function updateRecord(obj)
             obj.outDataTable = [obj.initialDataTable;obj.newDataTable];
